@@ -1,0 +1,14 @@
+<!--
+#Kyle Verdeyen
+#Independent Study, Summer 2017
+#Joanne Selinski
+HTML template for editing an entry. 
+-->
+<a href="{% url 'homepage:homepage' %}">Home</a><br>
+<a href="{% url 'table:table' %}">Display Table</a><br>
+<a href="{% url 'admin:index' %}">Admin page</a><br>
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit" />
+</form>

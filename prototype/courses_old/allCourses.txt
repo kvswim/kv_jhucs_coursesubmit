@@ -1,0 +1,15 @@
+EN.600.102 [E] CS Foundations (4)
+This course is an introduction to computer science for majors and non-majors.
+
+EN.600.103 [E] Fundamentals of Practical Computing (3)
+Intended audience: students majoring in science, engineering or medicine. 
+
+EN.600.104 [HE] Computer Ethics - Theory and Practice (1)
+Students will examine a variety of issues regarding various policy, legal, and moral issues related to the computer science profession itself and to the proliferation of computers in all aspects of society, especially in the era of the Internet. The course will cover general issues related to various ethical frameworks and move to topics specifically related to computers. The topics will include privacy issues, computer crime, intellectual property law - specifically copyright and patent issues, globalization, and ethical responsibilities for computer science professionals. Short course.
+
+EN.600.105 M&Ms: Freshman Experience (1)
+This course is required for all freshman computer science majors. Transfers into the major and minors may enroll by permission only. Students will attend four 3-week blocks of meetings with different computer science professors, each focused on a central theme. Active participation is required. Satisfactory/Unsatisfactory only. [General]
+
+EN.600.106 [E] MATLAB for Data Analytics (1)
+MATLAB is a numerical-computing environment that is popular, powerful, and simple. In this course, you will learn to develop modular MATLAB scripts and functions to manipulate data, to visualize your results, and to share your results with others. This course is intended for students who are new to both programming and numerical computing, though this is not a course on general-purpose programming. No prerequisites.
+

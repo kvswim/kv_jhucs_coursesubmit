@@ -1,0 +1,19 @@
+<!--
+Kyle Verdeyen
+Independent Study, Summer 2017
+Joanne Selinski
+HTML for the submission form. Takes form.py (which took model.py) and generates all fields as HTML in p-blocks.
+-->
+
+<a href="{% url 'homepage:homepage' %}">Home</a><br>
+<a href="{% url 'table:table' %}">Display Table</a><br>
+<a href="{% url 'admin:index' %}">Admin page</a><br>
+{% block content %}
+<p>
+<form method="POST" class="post-form"> 
+{% csrf_token %}
+{{form.as_p}}
+<button type="submit" class="save btn btn-default">Save</button>
+</form>
+</p>
+{% endblock %}

@@ -1,0 +1,189 @@
+<!--
+Baby's first HTML/CSS/Javascript/PHP/SQL foray. Don't hate me, I have no idea what any of these buttons do. 
+Kyle Verdeyen
+kverdey1@jhu.edu (kyleverdeyen@gmail.com)
+
+Goal: an HTML-based form for submitting courses for the CS department. 
+Should take: course number, title, area, # of credits, description, CS area, instructor, timeslot, fall/spring.
+Makes an updateable database, and can export a table 
+
+TODO:
+Build database and backend for form
+DONE Change course number to EN.601.xxx 
+DONE Add additional grad section numbers option
+New course section: 
+	DONE move course areas here, should be dropdown
+	DONE # of credits
+	DONE enrollment limit
+	prerequisites
+	DONE final exam y/n
+DONE Instructor field has autocomplete
+DONE Change Fall/Spring to radio button, should read Fall 2017/Spring 2018
+Form for different sections/labs/lecture etc, should use legend field?
+	Instructor: Starttime: Endtime: DayOfWeek [][][][]... Section/Lect dropdown AddNew
+
+Future advanced features:
+Course description pulled when course number entered
+Internal flag when course description is changed (?)
+Plug into CS department website (autoupdate of tables)
+Plug into registrar website (autosubmission in proper format)
+
+An attempt has been made to use HTML5 syntax...
+ -->
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+	<title>
+		JHU CS Course Submitter
+	</title>
+</head>
+
+<body>
+	<h1>
+		JHU CS Course Submitter
+	</h1>
+	<p>
+		A simple form for adding/tracking CS department courses. 
+		<hr>
+		<br>
+	</p>
+
+<p><!--main form-->
+	<form action=submit.php method=post>
+		Course Number:<br>
+		EN.601.<input type=text name=coursenumber>
+		<input type=checkbox name=gradsectcheckbox value=newclass onchange="showMore(document.getElementById('gradSectionField'))">Also has a grad section?<br>
+		<div id=gradSectionField style="display: none">Grad section: EN.601.<input type=text name=gradcoursenumber></div>
+		<br>
+
+		Course Title:<br>
+		<input type=text name=coursetitle><br>
+
+		
+		Description:<br>
+		<textarea name=description rows=10 cols=50>Enter description.</textarea><br>
+
+		CS Area:<br>
+		<select name=csarea>
+		<option value=analysis>Analysis</option>
+		<option value=applications>Applications</option>
+		<option value=systems>Systems</option>
+		<option value=noarea selected>n/a</option>
+		</select><br>
+
+		Instructor:<br><!--uses HTML5 list, see datalist at bottom-->
+		<input list=instructors name=instructor><br>
+
+		Start time:<br><!-- May not work on IE or Firefox -->
+		<input type=time name=starttime><br>
+		End time:<br>
+		<input type=time name=endtime><br>
+
+		Days of week:<br>
+		<input type=checkbox name=dayofweek value=sunday>Sunday
+		<input type=checkbox name=dayofweek value=monday>Monday
+		<input type=checkbox name=dayofweek value=tuesday>Tuesday
+		<input type=checkbox name=dayofweek value=wednesday>Wednesday
+		<input type=checkbox name=dayofweek value=thursday>Thursday
+		<input type=checkbox name=dayofweek value=friday>Friday
+		<input type=checkbox name=dayofweek value=saturday>Saturday
+		<br><br>
+
+		<input type=radio name=semester value=fall>Fall 2017
+		<input type=radio name=semester value=spring>Spring 2018<br>
+		<br>
+
+		<input type=checkbox name=newclass value=newclass onchange="showMore(document.getElementById('newCourseFields'))">This is a new course.<br>
+
+		<div id=newCourseFields style="display:none">
+			<!--Areas: H, E, Q, NQ, EQ,-->
+		Course Area: <select name=coursearea>
+			<option value="H">H</option>
+			<option value="E">E</option>
+			<option value="Q">Q</option>
+			<option value="NQ">NQ</option>
+			<option value="EQ">EQ</option>
+			<option value="n/a" selected>n/a</option>
+			</select><br>
+		Number of Credits: <select name=coursecreds>
+			<option value="0">0</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			</select><br>
+		Enrollment Limit: <input type=number name=enrollcount><br>
+		Has final exam? <input type=checkbox name=hasfinalexam value=true>
+		</div>
+
+		<input type=submit>
+	</form>
+</p>
+
+<img src=university_logo_small_horizontal_blue.jpg alt="JHU Logo" title="JHU Logo" width=600 height=250>
+
+
+
+<!-- Javascript function for showing "New Class" hidden fields-->
+<script>
+	function showMore(field) {
+		var x = field;
+		if (x.style.display == 'none') {
+			x.style.display = 'block';
+		} else {
+			x.style.display = 'none';
+		}
+	}
+</script>
+
+<!--Datalist of instructors-->
+<datalist id="instructors">
+<option value="Ahmad, Yanif">
+<option value="Amir, Yair">
+<option value="Arora, Raman">
+<option value="Battle, Alexis">
+<option value="Braverman, Vladimir">
+<option value="Burns, Randal">
+<option value="Dahbura, Anton">
+<option value="Dinitz, Michael">
+<option value="Drezde, Mark">
+<option value="Duh, Kevin"><!--sorry kevin lol-->
+<option value="Eisner, Jason">
+<option value="Froehlich, Peter">
+<option value="Green, Matthew">
+<option value="Hager, Gregory">
+<option value="Hohenberger, Susan">
+<option value="Huang, Ryan (Peng)">
+<option value="Jain, Abhishek">
+<option value="Jin, Xin">
+<option value="Kazanzides, Peter">
+<option value="Kazhdan, Michael">
+<option value="Koehn, Philipp">
+<option value="Kosaraju, S. Rao">
+<option value="Langmead, Benjamin">
+<option value="Leonard, Simon">
+<option value="Li, Xin">
+<option value="Masson, Gerald">
+<option value="Miner More, Sara">
+<option value="Navab, Nassir">
+<option value="Reiter, Austin">
+<option value="Rubin, Aviel">
+<option value="Salzberg, Steven">
+<option value="Saria, Suchi">
+<option value="Schatz, Michael">
+<option value="Selinski, Joanne">
+<option value="Shpitser, Ilya">
+<option value="Smith, Scott">
+<option value="Szalay, Alex">
+<option value="Taylor, Rusell">
+<option value="Terzis, Andreas">
+<option value="Van Durme, Benjamin">
+<option value="Yarowsky, David">
+<option value="Yuille, Alan">
+
+</datalist>
+
+</body>
+
+</html>

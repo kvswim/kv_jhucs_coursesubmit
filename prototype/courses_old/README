@@ -1,0 +1,42 @@
+Specs: menu driven program to create and update semester course listings
+Goal: conversion to a web-based interface
+
+OO Design -----------------
+
+CourseID - core details for a valid course ID
+    - div
+    - dept
+    - cnum
+
+Course - core details for one course, base class
+    - number
+    - title
+    - credits
+    - area designators (optional)
+    - description (optional)
+    - prereqs (optional)
+
+CourseListing extends Course - includes semester-specific information
+    - instructor
+    - timeslot
+    - semester
+    - year
+
+SemesterListing - collection of CourseListings
+    - semester
+    - year
+    - courses
+
+CoursesMain - menu driven program to manipulate course listings
+    - new course
+    - new semester
+    - add course to semester
+    - remove course from semester
+    - list all courses
+    - list semester courses
+    - save semesters to excel file
+    - load semesters from excel file
+    - load courses from text file
+    - save courses to text file
+
+

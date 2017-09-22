@@ -1,0 +1,24 @@
+<!--
+#Kyle Verdeyen
+#Independent Study, Summer 2017
+#Joanne Selinski
+#HTML for output table. See doc for available fields.
+-->
+<a href="{% url 'homepage:homepage' %}">Home</a><br>
+<a href="{% url 'mainform:form' %}">Submission Form </a><br>
+<a href="{% url 'admin:index' %}">Admin page</a><br>
+<table>
+	<tr>
+		<th>Course Number</th>
+		<th>Course Title/Description</th>
+		<th>Schedule</th>
+	</tr>
+	{% for x in classes %}
+	<tr>
+	<td>{{ x.class_number}} {{ x.section_number }}</td>
+	<td>{{ x.course_title }} {{ x.course_description }}</td>
+	<td>{{ x.start_time }} {{ x.end_time }}</td>
+	<td><a href="{% url 'classeditor:classeditor' x.pk %}">Edit</a></td>
+	</tr>
+	{% endfor %}
+</table>

@@ -1,0 +1,22 @@
+- add limits to CourseListing.py, update SemesterListing.py accordingly
+- add restrictions to CourseListing.py?, update SemesterListing.py also
+
+- create html semester listings
+- convert semester listing to calendar excel file
+
+- add string parse to Course.py?  (borrow from CourseMain.py)
+- create Faculty class? update SemesterListing accordingly
+- create TimeBlock class? update CourseListing accordingly
+
+
+DONE
+8/13 - update SemesterListing.py to handle section numbers
+8/12 - add section numbers to CourseListing.py
+8/12 - refactored menus to have current semester processing
+8/6 - refactored CourseListing to contain Course ID, not extend & copy Course data
+8/5 - separated menu into course and semester operations
+8/5 - fully integrated descriptions
+- add descriptions to newCourse function in CoursesMain.py
+- added area designators to Course.py
+- updated loadCatalog in CourseMain.py to read text file with descriptions, similar to allCourses.txt, but had trouble with end of line markers
+- added descriptions to Course.py
